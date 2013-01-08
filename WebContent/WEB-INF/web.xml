@@ -42,4 +42,14 @@
     <servlet-name>CartServlet</servlet-name>
     <url-pattern>/cart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowCartServlet</display-name>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <servlet-class>com.irondish.ShowCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <url-pattern>/showcart</url-pattern>
+  </servlet-mapping>
 </web-app>

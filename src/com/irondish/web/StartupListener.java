@@ -1,7 +1,9 @@
 package com.irondish.web;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -26,17 +28,23 @@ public class StartupListener implements ServletContextListener {
      */
     public void contextInitialized(ServletContextEvent event) {
     	
-    	List<Product> products = getProducts(); 
-    	event.getServletContext().setAttribute("products", products);
+    	event.getServletContext().setAttribute("products", getProducts());
     }
 
-	private List<Product> getProducts() {
-		List<Product> ret =new ArrayList<Product>();
-		ret.add(new Product("iron bucket", 100));
-		ret.add(new Product("wooden bucket", 150));
-		ret.add(new Product("diamond bucket", 999999));
-		ret.add(new Product("plastic bucket", 50));
+	private Map<String, Product> getProducts() { 
+		Map<String, Product> ret = new HashMap<String, Product>();
+
+		add(ret, new Product("iron bucket", 100));
+		add(ret, new Product("wooden bucket", 150));
+		add(ret, new Product("diamond bucket", 999999));
+		add(ret, new Product("plastic bucket", 50));
 		return ret;
+	}
+	
+	
+
+	private void add(Map<String, Product> ret, Product product) {
+		ret.put(product.getName(), product);
 	}
 
 	/**
