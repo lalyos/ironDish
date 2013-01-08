@@ -5,7 +5,7 @@ import com.irondish.domain.Product;
 public class CartItem {
 
 	private Product product;
-	private int count = 0;
+	private int count = 1;
 	
 	public CartItem(Product product) {
 		this.product = product;

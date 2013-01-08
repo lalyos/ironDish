@@ -29,8 +29,9 @@ public class ShowCartServlet extends HttpServlet {
 		if (cart == null) {
 			response.getWriter().println("<img src='' />");
 		} else {
-			for (iterable_type iterable_element : cart.getItems()) {
-				
+			for (CartItem item : cart.getItems()) {
+				response.getWriter().println("<li>" + item.getProduct().getName() 
+						+ " : " + item.getCount() + "</li>");
 			}
 			response.getWriter().println("</ul>");
 		}

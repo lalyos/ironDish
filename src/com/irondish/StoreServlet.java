@@ -1,7 +1,6 @@
 package com.irondish;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,11 +27,10 @@ public class StoreServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html");
-		List<Product> attribute = (List<Product>) getServletContext().getAttribute("products");
+		ProductCatalog catalog = (ProductCatalog) getServletContext().getAttribute("catalog");
 		
 		response.getWriter().println("<h2>products</h2><ul>");
-		for (Product product : attribute) {
+		for (Product product : catalog.getProducts()) {
 			response.getWriter().println("<li><a href='" + getServletContext().getContextPath()
 					+ "/cart?add=" + product.getName()  + "' >" + product.getName() + "</a></li>");
 		}

@@ -27,11 +27,11 @@ public class CartServlet extends HttpServlet {
 		String productName = request.getParameter("add");
 		Cart cart = (Cart) request.getSession().getAttribute("cart");
 		if (cart == null) {
-			cart = new Cart();
+			ProductCatalog catalog = (ProductCatalog) getServletContext().getAttribute("catalog");
+			cart = new Cart(catalog);
 			request.getSession().setAttribute("cart", cart);
 		}
 		cart.add(productName);
-		cart.debug();
 	}
 
 	/**

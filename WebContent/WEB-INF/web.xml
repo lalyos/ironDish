@@ -52,4 +52,14 @@
     <servlet-name>ShowCartServlet</servlet-name>
     <url-pattern>/showcart</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>ContentTypeFilter</display-name>
+    <filter-name>ContentTypeFilter</filter-name>
+    <filter-class>com.irondish.ContentTypeFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>ContentTypeFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
 </web-app>
