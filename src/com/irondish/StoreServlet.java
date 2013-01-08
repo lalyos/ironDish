@@ -2,6 +2,7 @@ package com.irondish;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,8 @@ public class StoreServlet extends HttpServlet {
 					+ "/cart?add=" + product.getName()  + "' >" + product.getName() + "</a></li>");
 		}
 		response.getWriter().println("</ul>");
+		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/showcart");
+		requestDispatcher.include(request, response);
 	}
 
 	/**

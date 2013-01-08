@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");
 		request.getSession().setAttribute("user", name);
-		response.sendRedirect("/store");
+		response.sendRedirect("store");
 	}
 
 	/**

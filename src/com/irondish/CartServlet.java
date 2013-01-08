@@ -32,6 +32,7 @@ public class CartServlet extends HttpServlet {
 			request.getSession().setAttribute("cart", cart);
 		}
 		cart.add(productName);
+		response.sendRedirect("store");
 	}
 
 	/**
