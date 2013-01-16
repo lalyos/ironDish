@@ -74,7 +74,7 @@
 		<display-name>secret</display-name>
 		<web-resource-collection>
 			<web-resource-name>topsecret</web-resource-name>
-			<url-pattern>/secret/*</url-pattern>
+			<url-pattern>/admin/*</url-pattern>
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>manager-gui</role-name>
@@ -91,8 +91,8 @@
 		<jsp-property-group>
 			<display-name>all jsp</display-name>
 			<url-pattern>*.jsp</url-pattern>
-			<include-prelude>header.jspf</include-prelude>
-			<include-coda>footer.jspf</include-coda>
+			<include-prelude>/header.jspf</include-prelude>
+			<include-coda>/footer.jspf</include-coda>
 			
 		</jsp-property-group>
 	</jsp-config>
