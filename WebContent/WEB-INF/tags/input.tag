@@ -6,8 +6,8 @@
 
 
 <div class="control-group">
-    <label class="control-label" for="${name}">[${name}]</label>
+    <label class="control-label" for="${name}">${name}</label>
     <div class="controls">
-      <input type="text" id="${name}" placeholder="${name}" value="${value}" >
+      <input type="text" name="${name}" id="${name}" placeholder="${name}" value="${value}" >
     </div>
   </div>
