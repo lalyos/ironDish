@@ -7,10 +7,10 @@
 
 <h2>delivery address v1.0</h2>
 <form action="" method="post" class="form-horizontal">
-		<iron:input name="street" value="${sessionScope.deliveryAddress.street}" />
+		<iron:input name="street" value="${sessionScope.deliveryAddress.street}" onclick="alert('Dzsiii kamonnnnnn!!! yieh')" />
 		<iron:input name="city" value="${sessionScope.deliveryAddress.city}" />
 		<iron:input name="zip" value="${sessionScope.deliveryAddress.zip}" />
-		<iron:input name="country" value="${sessionScope.deliveryAddress.country}" />
+		<iron:input name="country" value="${sessionScope.deliveryAddress.country}" xyz="laksjdajs" />
 
 	<br/><button type="submit" class="btn btn-primary">Set</button>
 </form>
