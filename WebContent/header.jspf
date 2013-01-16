@@ -44,15 +44,26 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Iron Dish</a>
+          <a class="brand" href="#">Iron Dish v1.0</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="break.jsp">break</a></li>
               <li><a href="breakadmin.jsp">break admin</a></li>
+              <li><a href="deliveryAddress.jsp">delivery Address</a></li>
               <li><a href="headers.jsp">headers</a></li>
+              
             </ul>
           </div><!--/.nav-collapse -->
+          <div class="nav-collapse collapse pull-right">
+          		<ul class="nav">
+                        <li ><a>Hello ${ not empty sessionScope.username ? sessionScope.username : 'senkihazi'}
+ 						</a></li>
+              </ul>
+          </div>
+          
+                    
+          
         </div>
       </div>
     </div>

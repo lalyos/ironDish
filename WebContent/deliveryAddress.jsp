@@ -9,16 +9,20 @@
 </c:if>
 
 
-<form action="" method="post">
+<form action="" method="post" class="form-horizontal">
 	<c:forEach items="street,city,zip,country" var="nextField">
-		<div>
-			<label for="${nextField}">${nextField}</label> <input
-				id="${nextField}" name="${nextField}" type="text"
-				value="${sessionScope.deliveryAddress[nextField]}" />
-		</div>
+
+<div class="control-group">
+    <label class="control-label" for="${nextField}">${nextField}</label>
+    <div class="controls">
+      <input type="text" id="${nextField}" placeholder="${nextField}" value="${sessionScope.deliveryAddress[nextField]}" >
+    </div>
+  </div>
+
 
 	</c:forEach>
 
 	<br />
-	<input type="submit" value="set" />
+	
+	<button type="submit" class="btn btn-primary">Set</button>
 </form>
