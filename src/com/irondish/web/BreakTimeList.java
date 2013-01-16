@@ -21,6 +21,16 @@ public class BreakTimeList {
 	public String getAddTime() {
 		throw new UnsupportedOperationException();
 	}
+
+	public void setRemoveTime(String time) {
+		System.out.println("trying to remove: " + time);
+		breakTimes.remove(time);
+	}
+	public String getRemoveTime() {
+		throw new UnsupportedOperationException();
+	}
+
+	
 	
 	public String getNext() {
 		String time = sdf.format(new Date());
