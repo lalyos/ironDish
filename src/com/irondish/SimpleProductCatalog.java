@@ -21,8 +21,8 @@ public class SimpleProductCatalog implements ProductCatalog {
 	}
 	private void add(Product product) {
 		productMap.put(product.getName(), product);
-		
 	}
+	
 	@Override
 	public Product findByName(String productName) {
 		Product product = productMap.get(productName);
@@ -35,6 +35,15 @@ public class SimpleProductCatalog implements ProductCatalog {
 	@Override
 	public List<Product> getProducts() {
 		return new ArrayList<Product>(productMap.values());
+	}
+	@Override
+	public void deleteProduct(String productName) {
+		System.out.println("deleting product: ...." + productName);
+		productMap.remove(productName);
+	}
+	@Override
+	public void addProduct(String productName, String price) {
+		add(new Product(productName, Integer.parseInt(price)));
 	}
 
 }
