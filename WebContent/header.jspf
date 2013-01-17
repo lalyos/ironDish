@@ -49,15 +49,16 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="break.jsp">break</a></li>
               
-			<iron:hasRoller role="admin">
+              <c:url value="/break.jsp"  var="breakUrl" />
               <c:url value="/admin/breakadmin.jsp"  var="breakadminUrl" />
-			</iron:hasRoller>
-              
+              <c:url value="/admin/storeAdmin.jsp"  var="storeadminUrl" />
               <c:url value="/deliveryAddress.jsp"  var="deliveryAddressUrl" />
               <c:url value="/headers.jsp"  var="headersUrl" />
+              
+              <li><a href="${breakUrl}">break</a></li>
               <iron:hasRoller role="manager-gui">
+              	<li><a href="${storeadminUrl}">store admin</a></li>
               	<li><a href="${breakadminUrl}">break admin</a></li>
               </iron:hasRoller>
               <li><a href="${deliveryAddressUrl }">delivery Address</a></li>

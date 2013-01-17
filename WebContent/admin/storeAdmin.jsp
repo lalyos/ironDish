@@ -8,7 +8,7 @@
 </c:if>
 
 <c:if test="${not empty param.command}">
-
+    <h2>Add ...</h2>
 	<%
 		catalog.addProduct(request.getParameter("name"), request.getParameter("price"));
 	%>	
@@ -25,15 +25,23 @@
   </thead>
   <tbody>
   <c:forEach items="${catalog.products}" var="product">
-  	<c:url var="deleteUrl" value="/admin/storeAdmin.jsp" >
-		<c:param name="delete" value="${product.name }" />
-	</c:url>
+  	<c:url var="deleteUrl" value="/admin/storeAdmin.jsp" />
   
     <tr>
-      <td>${product.name }</td>
-      <td>${product.price }</td>
+      <td> <c:out value="${product.name }"  />
+      </td>
+      <c:out value="${product.price }" />
+      <td></td>
       <td>
-      	 <a class="btn btn-danger" href="${deleteUrl}"><i class="icon-trash icon-white"></i></a>
+      	 <form action="${deleteUrl}" method="post"  style="display:inline;">
+      	 	<input type="hidden" name="delete"  value="${product.name }"/>
+      	 	<button type="submit" class="btn btn-danger" ><i class="icon-trash icon-white"></i></button>
+      	 </form>
+      	 <form action="" method="post" style="display:inline;" >
+      	 	<input type="hidden" name="name"  value="${product.name }"/>
+      	 	<input type="hidden" name="price"  value="${product.price }"/>
+      	 	<button type="submit" class="btn btn-info" ><i class="icon-pencil icon-white"></i></button>
+      	 </form>
       </td>
     </tr>
   </c:forEach>    
@@ -43,8 +51,8 @@
 <h2>New Product</h2>
 
 <form action="" method="post" class="form-horizontal">
-		<iron:input name="name" value="" />
-		<iron:input name="price" value="" />
+		<iron:input name="name" value="${param.name}" />
+		<iron:input name="price" value="${param.price}" />
 	<br/><button type="submit" class="btn btn-primary" name="command" value="add" >Add</button>
 </form>
 
